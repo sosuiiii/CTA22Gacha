@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10CB8F12D90C17B35127E7A2 /* Pods_GachaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDE04156C6943C92EBB54FE /* Pods_GachaAppTests.framework */; };
+		1F70F595F062F6DA384F8EDD /* Pods_GachaApp_GachaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75D65A4D182AC8FDB4C30BE /* Pods_GachaApp_GachaAppUITests.framework */; };
+		3EF9F63E72328599532E6E03 /* Pods_GachaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52017F881BF47304F43C036 /* Pods_GachaApp.framework */; };
 		53B5FA0827D054800098A1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA0727D054800098A1F9 /* AppDelegate.swift */; };
 		53B5FA0A27D054800098A1F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA0927D054800098A1F9 /* SceneDelegate.swift */; };
 		53B5FA0C27D054800098A1F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA0B27D054800098A1F9 /* ViewController.swift */; };
@@ -16,6 +19,10 @@
 		53B5FA1F27D0548B0098A1F9 /* GachaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA1E27D0548B0098A1F9 /* GachaAppTests.swift */; };
 		53B5FA2927D0548B0098A1F9 /* GachaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA2827D0548B0098A1F9 /* GachaAppUITests.swift */; };
 		53B5FA2B27D0548B0098A1F9 /* GachaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA2A27D0548B0098A1F9 /* GachaAppUITestsLaunchTests.swift */; };
+		53B5FA3B27D055AE0098A1F9 /* GachaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA3A27D055AE0098A1F9 /* GachaAPI.swift */; };
+		53B5FA3D27D055BB0098A1F9 /* GachaAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA3C27D055BB0098A1F9 /* GachaAPIType.swift */; };
+		53B5FA3F27D055C60098A1F9 /* GachaRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA3E27D055C60098A1F9 /* GachaRepositoryType.swift */; };
+		53B5FA4127D055D30098A1F9 /* GachaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FA4027D055D30098A1F9 /* GachaRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40194E3634D776C4B67E7603 /* Pods-GachaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaApp.release.xcconfig"; path = "Target Support Files/Pods-GachaApp/Pods-GachaApp.release.xcconfig"; sourceTree = "<group>"; };
 		53B5FA0427D054800098A1F9 /* GachaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GachaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B5FA0727D054800098A1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53B5FA0927D054800098A1F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,18 @@
 		53B5FA2427D0548B0098A1F9 /* GachaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GachaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B5FA2827D0548B0098A1F9 /* GachaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachaAppUITests.swift; sourceTree = "<group>"; };
 		53B5FA2A27D0548B0098A1F9 /* GachaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		53B5FA3A27D055AE0098A1F9 /* GachaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachaAPI.swift; sourceTree = "<group>"; };
+		53B5FA3C27D055BB0098A1F9 /* GachaAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachaAPIType.swift; sourceTree = "<group>"; };
+		53B5FA3E27D055C60098A1F9 /* GachaRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachaRepositoryType.swift; sourceTree = "<group>"; };
+		53B5FA4027D055D30098A1F9 /* GachaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachaRepository.swift; sourceTree = "<group>"; };
+		6C3FE63B73D4D7A6C34944BA /* Pods-GachaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GachaAppTests/Pods-GachaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F78B7BCDE543EE25A93EAD0 /* Pods-GachaApp-GachaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaApp-GachaAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GachaApp-GachaAppUITests/Pods-GachaApp-GachaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A75D65A4D182AC8FDB4C30BE /* Pods_GachaApp_GachaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachaApp_GachaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC657A67FDD7A375DF9A45BB /* Pods-GachaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaAppTests.release.xcconfig"; path = "Target Support Files/Pods-GachaAppTests/Pods-GachaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE264AAA72A65E85DD52EEC4 /* Pods-GachaApp-GachaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaApp-GachaAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GachaApp-GachaAppUITests/Pods-GachaApp-GachaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFDE04156C6943C92EBB54FE /* Pods_GachaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52017F881BF47304F43C036 /* Pods_GachaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GachaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2BE065361E70514D79E4B5 /* Pods-GachaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GachaApp.debug.xcconfig"; path = "Target Support Files/Pods-GachaApp/Pods-GachaApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF9F63E72328599532E6E03 /* Pods_GachaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10CB8F12D90C17B35127E7A2 /* Pods_GachaAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F70F595F062F6DA384F8EDD /* Pods_GachaApp_GachaAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +106,8 @@
 				53B5FA1D27D0548B0098A1F9 /* GachaAppTests */,
 				53B5FA2727D0548B0098A1F9 /* GachaAppUITests */,
 				53B5FA0527D054800098A1F9 /* Products */,
+				96EFC10F73BD28C7FCE530B1 /* Pods */,
+				64A877CB683ACAA9C12A9177 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +126,9 @@
 			children = (
 				53B5FA0727D054800098A1F9 /* AppDelegate.swift */,
 				53B5FA0927D054800098A1F9 /* SceneDelegate.swift */,
-				53B5FA0B27D054800098A1F9 /* ViewController.swift */,
-				53B5FA0D27D054800098A1F9 /* Main.storyboard */,
+				53B5FA4227D055E20098A1F9 /* UIComponent */,
+				53B5FA3727D0558D0098A1F9 /* Repository */,
 				53B5FA1027D0548A0098A1F9 /* Assets.xcassets */,
-				53B5FA1227D0548A0098A1F9 /* LaunchScreen.storyboard */,
 				53B5FA1527D0548A0098A1F9 /* Info.plist */,
 			);
 			path = GachaApp;
@@ -127,6 +151,58 @@
 			path = GachaAppUITests;
 			sourceTree = "<group>";
 		};
+		53B5FA3727D0558D0098A1F9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				53B5FA3827D055950098A1F9 /* API */,
+				53B5FA3E27D055C60098A1F9 /* GachaRepositoryType.swift */,
+				53B5FA4027D055D30098A1F9 /* GachaRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		53B5FA3827D055950098A1F9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				53B5FA3A27D055AE0098A1F9 /* GachaAPI.swift */,
+				53B5FA3C27D055BB0098A1F9 /* GachaAPIType.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		53B5FA4227D055E20098A1F9 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				53B5FA0D27D054800098A1F9 /* Main.storyboard */,
+				53B5FA1227D0548A0098A1F9 /* LaunchScreen.storyboard */,
+				53B5FA0B27D054800098A1F9 /* ViewController.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		64A877CB683ACAA9C12A9177 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E52017F881BF47304F43C036 /* Pods_GachaApp.framework */,
+				A75D65A4D182AC8FDB4C30BE /* Pods_GachaApp_GachaAppUITests.framework */,
+				CFDE04156C6943C92EBB54FE /* Pods_GachaAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96EFC10F73BD28C7FCE530B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE2BE065361E70514D79E4B5 /* Pods-GachaApp.debug.xcconfig */,
+				40194E3634D776C4B67E7603 /* Pods-GachaApp.release.xcconfig */,
+				8F78B7BCDE543EE25A93EAD0 /* Pods-GachaApp-GachaAppUITests.debug.xcconfig */,
+				CE264AAA72A65E85DD52EEC4 /* Pods-GachaApp-GachaAppUITests.release.xcconfig */,
+				6C3FE63B73D4D7A6C34944BA /* Pods-GachaAppTests.debug.xcconfig */,
+				CC657A67FDD7A375DF9A45BB /* Pods-GachaAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53B5FA2E27D0548B0098A1F9 /* Build configuration list for PBXNativeTarget "GachaApp" */;
 			buildPhases = (
+				7F4DEEF55E3E9571493965D1 /* [CP] Check Pods Manifest.lock */,
 				53B5FA0027D054800098A1F9 /* Sources */,
 				53B5FA0127D054800098A1F9 /* Frameworks */,
 				53B5FA0227D054800098A1F9 /* Resources */,
+				DA5C0ED58D46D7C4219FA338 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53B5FA3127D0548B0098A1F9 /* Build configuration list for PBXNativeTarget "GachaAppTests" */;
 			buildPhases = (
+				3DC4499DC31A386FBD1C633E /* [CP] Check Pods Manifest.lock */,
 				53B5FA1627D0548B0098A1F9 /* Sources */,
 				53B5FA1727D0548B0098A1F9 /* Frameworks */,
 				53B5FA1827D0548B0098A1F9 /* Resources */,
@@ -169,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53B5FA3427D0548B0098A1F9 /* Build configuration list for PBXNativeTarget "GachaAppUITests" */;
 			buildPhases = (
+				7DF84A7B9487104FA40701C6 /* [CP] Check Pods Manifest.lock */,
 				53B5FA2027D0548B0098A1F9 /* Sources */,
 				53B5FA2127D0548B0098A1F9 /* Frameworks */,
 				53B5FA2227D0548B0098A1F9 /* Resources */,
+				7F8A693F66BEB8295E189BDD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +334,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DC4499DC31A386FBD1C633E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GachaAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DF84A7B9487104FA40701C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GachaApp-GachaAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F4DEEF55E3E9571493965D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GachaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F8A693F66BEB8295E189BDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GachaApp-GachaAppUITests/Pods-GachaApp-GachaAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GachaApp-GachaAppUITests/Pods-GachaApp-GachaAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GachaApp-GachaAppUITests/Pods-GachaApp-GachaAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5C0ED58D46D7C4219FA338 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GachaApp/Pods-GachaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GachaApp/Pods-GachaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GachaApp/Pods-GachaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		53B5FA0027D054800098A1F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				53B5FA0C27D054800098A1F9 /* ViewController.swift in Sources */,
+				53B5FA4127D055D30098A1F9 /* GachaRepository.swift in Sources */,
 				53B5FA0827D054800098A1F9 /* AppDelegate.swift in Sources */,
+				53B5FA3F27D055C60098A1F9 /* GachaRepositoryType.swift in Sources */,
 				53B5FA0A27D054800098A1F9 /* SceneDelegate.swift in Sources */,
+				53B5FA3B27D055AE0098A1F9 /* GachaAPI.swift in Sources */,
+				53B5FA3D27D055BB0098A1F9 /* GachaAPIType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +622,7 @@
 		};
 		53B5FA2F27D0548B0098A1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE2BE065361E70514D79E4B5 /* Pods-GachaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,6 +650,7 @@
 		};
 		53B5FA3027D0548B0098A1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40194E3634D776C4B67E7603 /* Pods-GachaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +678,7 @@
 		};
 		53B5FA3227D0548B0098A1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3FE63B73D4D7A6C34944BA /* Pods-GachaAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +698,7 @@
 		};
 		53B5FA3327D0548B0098A1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC657A67FDD7A375DF9A45BB /* Pods-GachaAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -526,6 +718,7 @@
 		};
 		53B5FA3527D0548B0098A1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F78B7BCDE543EE25A93EAD0 /* Pods-GachaApp-GachaAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +736,7 @@
 		};
 		53B5FA3627D0548B0098A1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE264AAA72A65E85DD52EEC4 /* Pods-GachaApp-GachaAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
