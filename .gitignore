@@ -2,5 +2,7 @@ xcuserdata
 *.xcodeproj
 *.xcworkspace
 
-GachaApp/UIResource/Generated/
+GachaApp/UIResource/Generated/Localizable/*
+GachaApp/UIResource/Generated/Image/*
+GachaApp/UIResource/Generated/Color/*
 Tools/.build
