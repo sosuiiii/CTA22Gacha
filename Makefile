@@ -4,9 +4,10 @@ SWIFT_RUN := swift run -c release --package-path Tools
 
 xcodegen: 
 	@mint run yonaskolb/XcodeGen xcodegen generate --use-cache
-setup:
-	make xcodegen
+setup: 
+	mkdir -p GachaApp/UIResource/Generated/{Color,Image,Localizable}
 	make run-swiftgen
+	make xcodegen
 	open ./${PROJECT_NAME}
 open:
 	open ./${PROJECT_NAME}
