@@ -1,0 +1,73 @@
+name: GachaApp
+options:
+  minimumXcodeGenVersion: 2.11.0
+base:
+  MARKETING_VERSION: 1.0.0
+  BUILD_VERSION: 1
+packages:
+  Unio:
+    url: https://github.com/cats-oss/Unio
+    exactVersion: 0.11.0
+  RxSwift:
+    url: https://github.com/ReactiveX/RxSwift
+    exactVersion: 6.5.0
+  PKHUD:
+    url: https://github.com/pkluz/PKHUD
+    from: 5.4.0
+  RxDataSources:
+    url: https://github.com/RxSwiftCommunity/RxDataSources
+    exactVersion: 5.0.2
+  RealmSwift:
+    url: https://github.com/realm/realm-swift
+    exactVersion: 10.23.0
+  Moya:
+    url: https://github.com/Moya/Moya
+    exactVersion: 15.0.0
+  Nuke:
+    url: https://github.com/kean/Nuke
+    exactVersion: 10.7.1
+targets:
+  GachaApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - GachaApp
+    schemes:
+        GachaApp:
+        testTargetName: GachaAppTests
+    preBuildScripts:
+      - path: ./Scripts/before-compile.sh
+        name: before-compile
+        shell: "/bin/bash"
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: ca22engineer.CTA22Gacha
+    dependencies:
+      - package: Unio
+      - package: RxSwift
+      - package: RxSwift
+        product: RxCocoa
+      - package: PKHUD
+      - package: RxDataSources
+      - package: RealmSwift
+      - package: Moya
+      - package: Nuke
+
+  GachaAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources: GachaAppTests
+    dependencies:
+     - target: GachaApp
+
+  GachaAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources: GachaAppUITests
+    dependencies:
+     - target: GachaApp
+
+
+

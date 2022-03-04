@@ -1,3 +1,4 @@
+import Foundation
 import Moya
 
 enum UserTarget {
@@ -29,7 +30,7 @@ extension UserTarget: TargetType {
         }
     }
 
-    var method: Method {
+    var method: Moya.Method {
         switch self {
         case .register:
             return .post
