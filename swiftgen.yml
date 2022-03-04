@@ -1,0 +1,29 @@
+strings:
+  inputs: GachaApp/UIResource/Resource/Localizable/Localizable.strings
+  outputs:
+    - templateName: flat-swift4
+      output: GachaApp/UIResource/Generated/Localizable/Localized.swift
+      params:
+        publicAccess: true
+xcassets:
+  - inputs: GachaApp/UIResource/Resource/Image/Image.xcassets
+    outputs:
+      templatePath: templates/xcassets/swift5.stencil
+      output: GachaApp/UIResource/Generated/Image/Image.swift
+      params:
+        enumName: AssetImage
+        publicAccess: true
+        forceProvidesNamespaces: true
+        bundle: Bundle.myModule
+  - inputs:
+       - GachaApp/UIResource/Resource/Color/Color.xcassets
+    outputs:
+      templatePath: templates/xcassets/swift5.stencil
+      output: GachaApp/UIResource/Generated/Color/Color.swift
+      params:
+        enumName: AssetColor
+        publicAccess: true
+        forceProvidesNamespaces: true
+        bundle: Bundle.myModule
+
+

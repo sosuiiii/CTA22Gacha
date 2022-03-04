@@ -1,3 +1,6 @@
 xcuserdata
 *.xcodeproj
 *.xcworkspace
+
+GachaApp/UIResource/Generated/
+Tools/.build
