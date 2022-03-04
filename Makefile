@@ -1,4 +1,4 @@
-PRODUCT_NAME := CTA22Gacha
+PRODUCT_NAME := GachaApp
 PROJECT_NAME := ${PRODUCT_NAME}.xcodeproj
 SWIFT_RUN := swift run -c release --package-path Tools
 
