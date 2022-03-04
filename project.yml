@@ -33,6 +33,13 @@ targets:
     deploymentTarget: "15.0"
     sources:
       - GachaApp
+    schemes:
+        GachaApp:
+        testTargetName: GachaAppTests
+    preBuildScripts:
+      - path: ./Scripts/before-compile.sh
+        name: before-compile
+        shell: "/bin/bash"
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: ca22engineer.CTA22Gacha
     dependencies:
@@ -45,6 +52,7 @@ targets:
       - package: RealmSwift
       - package: Moya
       - package: Nuke
+
   GachaAppTests:
     type: bundle.unit-test
     platform: iOS
@@ -52,6 +60,7 @@ targets:
     sources: GachaAppTests
     dependencies:
      - target: GachaApp
+
   GachaAppUITests:
     type: bundle.ui-testing
     platform: iOS
