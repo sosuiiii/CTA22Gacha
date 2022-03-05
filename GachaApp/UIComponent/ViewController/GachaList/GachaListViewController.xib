@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GachaListViewController" customModule="GachaApp" customModuleProvider="target">
             <connections>
+                <outlet property="segmentControl" destination="wKh-RE-eum" id="BgG-Rn-5VZ"/>
+                <outlet property="tableView" destination="Yhy-7T-P9a" id="6Hj-LF-2za"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,20 +20,32 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GachaList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owK-Jk-bki">
-                    <rect key="frame" x="99.5" y="418" width="215.5" height="60"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wKh-RE-eum">
+                    <rect key="frame" x="57" y="54" width="300" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="8l5-Ph-1ks"/>
+                    </constraints>
+                    <segments>
+                        <segment title="First"/>
+                        <segment title="Second"/>
+                    </segments>
+                </segmentedControl>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yhy-7T-P9a">
+                    <rect key="frame" x="0.0" y="85" width="414" height="777"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="owK-Jk-bki" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LF8-Ib-65e"/>
-                <constraint firstItem="owK-Jk-bki" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ONu-mO-qOM"/>
+                <constraint firstItem="Yhy-7T-P9a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5uF-Ld-8hI"/>
+                <constraint firstItem="wKh-RE-eum" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Va-qf-Zfn"/>
+                <constraint firstItem="Yhy-7T-P9a" firstAttribute="top" secondItem="wKh-RE-eum" secondAttribute="bottom" id="ZJo-2t-o6M"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yhy-7T-P9a" secondAttribute="trailing" id="d5P-v2-gM1"/>
+                <constraint firstItem="Yhy-7T-P9a" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="yyK-92-6Gp"/>
+                <constraint firstItem="wKh-RE-eum" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zc7-ta-rq2"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="91"/>
+            <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
         </view>
     </objects>
     <resources>

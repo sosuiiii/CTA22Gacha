@@ -1,5 +1,8 @@
 // MARK: - サンプル
-"LocalizeSample" = "ローカライズサンプル";
 
+"Gacha.AppTitle" = "Gacha";
 "GachaList" = "ガチャ一覧";
 "Mypage" = "マイページ";
+"AllGacha" = "全てのガチャ";
+"MyGacha" = "マイガチャ";
+"ConnectedError" = "通信エラー";
