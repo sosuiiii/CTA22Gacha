@@ -7,13 +7,34 @@
 
 import UIKit
 
-class TopTabBarController: UITabBarController {
+final class TopTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configViewControllers()
 
         // Do any additional setup after loading the view.
     }
+
+    private func configViewControllers() {
+        tabBar.tintColor = .blue
+        tabBar.backgroundColor = .systemGray6
+
+        let gachaListVC = templeteNavigationController(title: L10n.gachaList, systemName: "list.bullet", rootViewController: GachaListViewController())
+
+        let mypageVC = templeteNavigationController(title: L10n.mypage, systemName: "person.fill", rootViewController: MypageViewController())
+
+        viewControllers = [gachaListVC, mypageVC]
+    }
+
+    private func templeteNavigationController(title: String, systemName: String, rootViewController: UIViewController) -> UINavigationController {
+        let nav = UINavigationController(rootViewController: rootViewController)
+        nav.tabBarItem.title = title
+        nav.tabBarItem.image = UIImage(systemName: systemName)
+        return nav
+    }
+
+
 
 
     /*

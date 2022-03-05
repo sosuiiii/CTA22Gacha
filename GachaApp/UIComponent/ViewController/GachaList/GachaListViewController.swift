@@ -9,7 +9,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class GachaListViewController: UIViewController {
+final class GachaListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

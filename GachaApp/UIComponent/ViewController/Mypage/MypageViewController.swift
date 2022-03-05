@@ -9,7 +9,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class MypageViewController: UIViewController {
+final class MypageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
