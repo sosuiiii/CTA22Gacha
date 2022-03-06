@@ -5,12 +5,38 @@ import UIKit
 class RegisterUserViewController: UIViewController {
 
     private let registerView = RegisterView()
-
-    init() {
+    private let disposeBag = DisposeBag()
+    private let viewStream: RegisterUserViewStreamType
+    init(viewStream: RegisterUserViewStreamType) {
+        self.viewStream = viewStream
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .systemGray6
         view.addSubview(registerView)
         setLayout()
+
+        registerView.secureButton.rx.tap.subscribe(with: self, onNext: { me, _ in
+            me.registerView.passwordTextField.isSecureTextEntry = me.registerView.passwordTextField.isSecureTextEntry ? false : true
+        }).disposed(by: disposeBag)
+
+        registerView.usernameTextField.rx.controlEvent([.editingChanged])
+            .bind(to: viewStream.input.userNameEditingChanged)
+            .disposed(by: disposeBag)
+
+        registerView.usernameTextField.rx.text.orEmpty
+            .bind(to: viewStream.input.userNameText)
+            .disposed(by: disposeBag)
+
+        registerView.passwordTextField.rx.controlEvent([.editingChanged])
+            .bind(to: viewStream.input.passwordEditingChanged)
+            .disposed(by: disposeBag)
+
+        registerView.passwordTextField.rx.text.orEmpty
+            .bind(to: viewStream.input.passwordText)
+            .disposed(by: disposeBag)
+
+        registerView.registerButton.rx.controlEvent([.touchUpInside])
+            .bind(to: viewStream.input.registerButtonTapped)
+            .disposed(by: disposeBag)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -30,46 +56,46 @@ class RegisterUserViewController: UIViewController {
 
 final class RegisterView: UIView {
 
-    private let userNameLabel: UILabel = {
+    let userNameLabel: UILabel = {
         let label = UILabel()
         label.text = "username"
         label.textColor = UIColor(named: "LabelBase")
         return label
     }()
 
-    private let usernameTextField: UITextField = {
+    let usernameTextField: UITextField = {
         let textField = UITextField()
         textField.configure()
         return textField
     }()
 
-    private let passwordLabel: UILabel = {
+    let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = "password"
         label.textColor = UIColor(named: "LabelBase")
         return label
     }()
 
-    private let passwordTextField: UITextField = {
+    let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.configure()
         textField.isSecureTextEntry = true
         return textField
     }()
 
-    private let underline: UIView = {
+    let underline: UIView = {
         let underLine = UIView()
         underLine.backgroundColor = UIColor(named: "Base")
         return underLine
     }()
 
-    private let underline2: UIView = {
+    let underline2: UIView = {
         let underLine = UIView()
         underLine.backgroundColor = UIColor(named: "Base")
         return underLine
     }()
 
-    private let registerButton: UIButton = {
+    let registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("登録", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 22)
@@ -79,14 +105,12 @@ final class RegisterView: UIView {
         return button
     }()
 
-    private let secureButton: UIButton = {
+    let secureButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "eye"), for: .normal)
         button.setTitleColor(.gray, for: .normal)
         return button
     }()
-
-    private let disposeBag = DisposeBag()
 
     init() {
         super.init(frame: .zero)
