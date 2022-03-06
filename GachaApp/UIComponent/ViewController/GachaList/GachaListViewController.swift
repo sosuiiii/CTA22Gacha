@@ -26,6 +26,13 @@ final class GachaListViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var addGachaButton: UIButton! {
+        didSet {
+            addGachaButton.setTitle("ガチャ作成", for: .normal)
+            addGachaButton.layer.cornerRadius = 5
+        }
+    }
+
     private let viewStream: GachaListViewStreamType
 
     private let dataSource = GachasListDataSource()
@@ -46,6 +53,11 @@ final class GachaListViewController: UIViewController {
 
         configureNavigationBar(withTitle: L10n.gachaAppTitle)
         // Do any additional setup after loading the view.
+
+        addGachaButton.rx.tap
+            .map(void)
+            .bind(to: viewStream.input.addGacha)
+            .disposed(by: disposeBag)
 
         tableView.rx.modelSelected(Gacha.self)
             .bind(to: viewStream.input.showGachaDetail)
@@ -94,16 +106,16 @@ final class GachaListViewController: UIViewController {
             .subscribe()
             .disposed(by: disposeBag)
 
+        // TODO: ガチャ追加画面遷移
         viewStream.output.transitionState
             .do { transitionState in
                 switch transitionState {
+                case .addGacha:
+                    print("ガチャ追加画面へ")
                 case .rotate(let gacha):
-                    print("\(gacha.name)を回す")
+                    print("[\(gacha.name)]ガチャを回す画面へ")
                 case .showDetail(let gacha):
-                    print("\(gacha.name)の詳細へ")
-
-                default:
-                    print("nothing")
+                    print("[\(gacha.name)]ガチャの詳細へ")
                 }
             }
             .subscribe()

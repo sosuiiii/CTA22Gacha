@@ -87,6 +87,11 @@ final class GachaListViewStream: UnioStream<GachaListViewStream>, GachaListViewS
             .bind(to: state.error)
             .disposed(by: disposeBag)
 
+        input.addGacha
+            .map { _ in TransitionState.addGacha }
+            .bind(to: state.transitionState)
+            .disposed(by: disposeBag)
+
         input.rotateGacha
             .map(TransitionState.rotate)
             .bind(to: state.transitionState)
@@ -110,6 +115,7 @@ extension GachaListViewStream {
     struct Input: InputType {
         let viewDidLoad = PublishRelay<Void>()
         let refresh = PublishRelay<Void>()
+        let addGacha = PublishRelay<Void>()
         let rotateGacha = PublishRelay<Gacha>()
         let segmentIndex = PublishRelay<Int>()
         let showGachaDetail = PublishRelay<Gacha>()
@@ -135,6 +141,7 @@ extension GachaListViewStream {
 
 extension GachaListViewStream {
     enum TransitionState {
+        case addGacha
         case rotate(Gacha)
         case showDetail(Gacha)
     }
