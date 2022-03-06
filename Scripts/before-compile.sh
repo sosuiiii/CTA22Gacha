@@ -1,5 +1,5 @@
 #! /bin/bash
-
+SWIFT_RUN := swift run -c release --package-path Tools
 FILE_PATH="dirname $0"
 
 cd "$FILE_PATH/../"
@@ -9,6 +9,8 @@ shopt -s expand_aliases
 alias package-run='xcrun --sdk macosx swift run --package-path Tools'
 
 CHANGED_FILES=$(git status -s | grep -E '^\s*[^D]+\s+.*\.swift$' | awk -F ' ' '{print $2}')
+
+$(SWIFT_RUN) swiftgen
 
 if [ -z "$CHANGED_FILES" ]; then
     echo "No files changed. Skip prebuild script."
