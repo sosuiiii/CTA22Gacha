@@ -46,10 +46,17 @@ final class GachaListViewController: UIViewController {
         configureNavigationBar(withTitle: L10n.gachaAppTitle)
         // Do any additional setup after loading the view.
 
+        tableView.rx.modelSelected(Gacha.self)
+            .bind(to: Binder(self) { me, gacha in
+                // TODO: ガチャ詳細画面遷移
+            })
+            .disposed(by: disposeBag)
+
         tableView.refreshControl?.rx.controlEvent(.valueChanged)
-            .map { _ in }
+            .map(void)
             .bind(to: viewStream.input.refresh)
             .disposed(by: disposeBag)
+
 
         segmentControl.rx.selectedSegmentIndex
             .bind(to: viewStream.input.segmentIndex)
@@ -66,13 +73,13 @@ final class GachaListViewController: UIViewController {
 
         viewStream.output.isConnecting
             .filter { $0 == true }
-            .map { _ in }
+            .map(void)
             .bind(to: Binder(self) { _, _ in HUD.show(.progress) })
             .disposed(by: disposeBag)
 
         viewStream.output.isConnecting
             .filter { $0 == false }
-            .map { _ in }
+            .map(void)
             .bind(to:
                 refreshControl.rx.endRefreshing,
                 Binder(self) { _, _ in HUD.hide() }
@@ -94,6 +101,7 @@ final class GachaListViewController: UIViewController {
         Observable.just(())
             .bind(to:viewStream.input.viewDidLoad)
             .disposed(by: disposeBag)
+
     }
 
 

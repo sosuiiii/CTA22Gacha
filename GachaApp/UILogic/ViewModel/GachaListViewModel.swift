@@ -41,8 +41,13 @@ final class GachaListViewStream: UnioStream<GachaListViewStream>, GachaListViewS
             .filter { $0 == 0 }
             .delay(.seconds(2), scheduler: MainScheduler.instance)
             .flatMap { _ in
-//                Observable.just(["11111", "22222", "33333"])
-                Observable<[String]>.error(NSError(domain: "通信エラー", code: -1, userInfo: nil))
+//                Observable.just([
+//                    Gacha(name: "a"),
+//                    Gacha(name: "b"),
+//                    Gacha(name: "c")
+//                ])
+//                .materialize()
+                Observable<[Gacha]>.error(NSError(domain: "通信エラー", code: -1, userInfo: nil))
                     .materialize()
             }
             .share()
@@ -51,8 +56,11 @@ final class GachaListViewStream: UnioStream<GachaListViewStream>, GachaListViewS
             .filter { $0 == 1 }
             .delay(.seconds(2), scheduler: MainScheduler.instance)
             .flatMap { _ in
-                Observable.just(["11111", "22222"])
-                    .materialize()
+                Observable.just([
+                    Gacha(name: "a"),
+                    Gacha(name: "b")
+                ])
+                .materialize()
             }
             .share()
 
@@ -96,13 +104,13 @@ extension GachaListViewStream {
 
     struct Output: OutputType {
         let error: Observable<Error>
-        let gachaList: Observable<[String]>
+        let gachaList: Observable<[Gacha]>
         let isConnecting: Observable<Bool>
     }
 
     struct State: StateType {
         let error = PublishRelay<Error>()
-        let gachaList = PublishRelay<[String]>()
+        let gachaList = PublishRelay<[Gacha]>()
         let isConnecting = PublishRelay<Bool>()
     }
 

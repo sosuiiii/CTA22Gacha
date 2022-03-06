@@ -26,6 +26,6 @@ final class GachasTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configure(with gacha: String) {
+    func configure(with gacha: Gacha) {
     }
 }
