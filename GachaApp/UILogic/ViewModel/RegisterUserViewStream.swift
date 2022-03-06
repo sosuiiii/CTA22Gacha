@@ -41,9 +41,9 @@ final class RegisterUserViewStream: UnioStream<RegisterUserViewStream>, Register
 
 extension RegisterUserViewStream {
     struct Input: InputType {
-        let userNameEditingChanged = BehaviorRelay<Void>(value: ())
+        let userNameEditingChanged = PublishRelay<Void>()
         let userNameText = PublishRelay<String>()
-        let passwordEditingChanged = BehaviorRelay<Void>(value: ())
+        let passwordEditingChanged = PublishRelay<Void>()
         let passwordText = PublishRelay<String>()
         let registerButtonTapped = PublishRelay<Void>()
     }
