@@ -19,8 +19,6 @@ final class GachasListDataSource: NSObject, UITableViewDataSource {
         rotateGachaRelay.asObservable()
     }
 
-    private let disposeBag = DisposeBag()
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         items.count
     }
@@ -33,7 +31,8 @@ final class GachasListDataSource: NSObject, UITableViewDataSource {
         cell.rotateButton.rx.tap
             .map { _ in gacha }
             .bind(to: rotateGachaRelay)
-            .disposed(by: disposeBag)
+            .disposed(by: cell.disposeBag) // セルがdisposeBag持たないと購読が重複する。
+
         return cell
     }
 }

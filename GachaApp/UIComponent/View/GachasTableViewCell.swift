@@ -5,6 +5,7 @@
 //  Created by 化田晃平 on 2022/03/05.
 //
 
+import RxSwift
 import UIKit
 
 final class GachasTableViewCell: UITableViewCell {
@@ -20,6 +21,12 @@ final class GachasTableViewCell: UITableViewCell {
         didSet {
             gachaImageView.image = UIImage(systemName: "pencil")
         }
+    }
+    
+    private(set) var disposeBag = DisposeBag()
+
+    override func prepareForReuse() {
+        disposeBag = DisposeBag()
     }
 
     override func awakeFromNib() {
