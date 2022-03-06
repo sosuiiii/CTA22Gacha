@@ -9,3 +9,6 @@
 "AllGacha" = "全てのガチャ";
 "MyGacha" = "マイガチャ";
 "ConnectedError" = "通信エラー";
+"Username" = "ユーザーネーム";
+"Password" = "パスワード";
+"Register" = "登録";
