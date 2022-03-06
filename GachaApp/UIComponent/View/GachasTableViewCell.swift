@@ -12,7 +12,7 @@ final class GachasTableViewCell: UITableViewCell {
 
     @IBOutlet private(set) weak var rotateButton: UIButton! {
         didSet {
-            rotateButton.setTitle("引く", for: .normal)
+            rotateButton.setTitle(L10n.gachaRotate, for: .normal)
             rotateButton.layer.cornerRadius = 5
         }
     }

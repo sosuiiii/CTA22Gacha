@@ -38,7 +38,7 @@ final class GachaListViewStream: UnioStream<GachaListViewStream>, GachaListViewS
 
         // TODO: APIを繋いだらdelay消す（非同期通信はわざと2秒delayをかけている。）
         let gachaListEvent = segmentIndexStream
-            .filter { $0 == 0 }
+            .filter { $0 == SCTag.allGacha.rawValue }
             .delay(.seconds(2), scheduler: MainScheduler.instance)
             .flatMap { _ in
 //                Observable.just([
@@ -47,13 +47,13 @@ final class GachaListViewStream: UnioStream<GachaListViewStream>, GachaListViewS
 //                    Gacha(name: "c")
 //                ])
 //                .materialize()
-                Observable<[Gacha]>.error(NSError(domain: "通信エラー", code: -1, userInfo: nil))
+                Observable<[Gacha]>.error(NSError(domain: L10n.connectedError, code: -1, userInfo: nil))
                     .materialize()
             }
             .share()
 
         let myGachaListEvent = segmentIndexStream
-            .filter { $0 == 1 }
+            .filter { $0 == SCTag.myGacha.rawValue }
             .delay(.seconds(2), scheduler: MainScheduler.instance)
             .flatMap { _ in
                 Observable.just([
@@ -144,5 +144,11 @@ extension GachaListViewStream {
         case addGacha
         case rotate(Gacha)
         case showDetail(Gacha)
+    }
+
+    /// セグメントコントロールタグ
+    enum SCTag: Int {
+        case allGacha
+        case myGacha
     }
 }

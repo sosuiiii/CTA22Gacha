@@ -13,8 +13,8 @@ import UIKit
 final class GachaListViewController: UIViewController {
     @IBOutlet private weak var segmentControl: UISegmentedControl! {
         didSet {
-            segmentControl.setTitle(L10n.allGacha, forSegmentAt: 0)
-            segmentControl.setTitle(L10n.myGacha, forSegmentAt: 1)
+            segmentControl.setTitle(L10n.allGacha, forSegmentAt: GachaListViewStream.SCTag.allGacha.rawValue)
+            segmentControl.setTitle(L10n.myGacha, forSegmentAt: GachaListViewStream.SCTag.myGacha.rawValue)
         }
     }
     @IBOutlet private weak var tableView: UITableView! {
@@ -28,7 +28,7 @@ final class GachaListViewController: UIViewController {
 
     @IBOutlet private weak var addGachaButton: UIButton! {
         didSet {
-            addGachaButton.setTitle("ガチャ作成", for: .normal)
+            addGachaButton.setTitle(L10n.gachaAddGacha, for: .normal)
             addGachaButton.layer.cornerRadius = 5
         }
     }
@@ -127,16 +127,4 @@ final class GachaListViewController: UIViewController {
             .disposed(by: disposeBag)
 
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -1,6 +1,9 @@
 // MARK: - サンプル
 
 "Gacha.AppTitle" = "Gacha";
+"Gacha.rotate" = "回す";
+"Gacha.addGacha" = "ガチャ作成";
+
 "GachaList" = "ガチャ一覧";
 "Mypage" = "マイページ";
 "AllGacha" = "全てのガチャ";
