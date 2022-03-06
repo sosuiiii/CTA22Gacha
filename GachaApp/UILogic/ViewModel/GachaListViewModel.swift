@@ -87,10 +87,21 @@ final class GachaListViewStream: UnioStream<GachaListViewStream>, GachaListViewS
             .bind(to: state.error)
             .disposed(by: disposeBag)
 
+        input.rotateGacha
+            .map(TransitionState.rotate)
+            .bind(to: state.transitionState)
+            .disposed(by: disposeBag)
+
+        input.showGachaDetail
+            .map(TransitionState.showDetail)
+            .bind(to: state.transitionState)
+            .disposed(by: disposeBag)
+
             return Output(
                 error: state.error.asObservable(),
                 gachaList: state.gachaList.asObservable(),
-                isConnecting: state.isConnecting.asObservable()
+                isConnecting: state.isConnecting.asObservable(),
+                transitionState: state.transitionState.asObservable()
             )
     }
 }
@@ -99,21 +110,32 @@ extension GachaListViewStream {
     struct Input: InputType {
         let viewDidLoad = PublishRelay<Void>()
         let refresh = PublishRelay<Void>()
+        let rotateGacha = PublishRelay<Gacha>()
         let segmentIndex = PublishRelay<Int>()
+        let showGachaDetail = PublishRelay<Gacha>()
     }
 
     struct Output: OutputType {
         let error: Observable<Error>
         let gachaList: Observable<[Gacha]>
         let isConnecting: Observable<Bool>
+        let transitionState: Observable<TransitionState>
     }
 
     struct State: StateType {
         let error = PublishRelay<Error>()
         let gachaList = PublishRelay<[Gacha]>()
         let isConnecting = PublishRelay<Bool>()
+        let transitionState = PublishRelay<TransitionState>()
     }
 
     struct Extra: ExtraType {
+    }
+}
+
+extension GachaListViewStream {
+    enum TransitionState {
+        case rotate(Gacha)
+        case showDetail(Gacha)
     }
 }

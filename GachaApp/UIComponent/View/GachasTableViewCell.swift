@@ -9,6 +9,13 @@ import UIKit
 
 final class GachasTableViewCell: UITableViewCell {
 
+    @IBOutlet private(set) weak var rotateButton: UIButton! {
+        didSet {
+            rotateButton.setTitle("引く", for: .normal)
+            rotateButton.layer.cornerRadius = 5
+        }
+    }
+
     @IBOutlet private weak var gachaImageView: UIImageView! {
         didSet {
             gachaImageView.image = UIImage(systemName: "pencil")

@@ -27,8 +27,9 @@ final class GachaListViewController: UIViewController {
     }
 
     private let viewStream: GachaListViewStreamType
-    private let disposeBag = DisposeBag()
 
+    private let dataSource = GachasListDataSource()
+    private let disposeBag = DisposeBag()
     private let refreshControl = UIRefreshControl()
 
     init(viewStream: GachaListViewStreamType = GachaListViewStream()) {
@@ -47,9 +48,7 @@ final class GachaListViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         tableView.rx.modelSelected(Gacha.self)
-            .bind(to: Binder(self) { me, gacha in
-                // TODO: ガチャ詳細画面遷移
-            })
+            .bind(to: viewStream.input.showGachaDetail)
             .disposed(by: disposeBag)
 
         tableView.refreshControl?.rx.controlEvent(.valueChanged)
@@ -57,18 +56,16 @@ final class GachaListViewController: UIViewController {
             .bind(to: viewStream.input.refresh)
             .disposed(by: disposeBag)
 
+        dataSource.rotateGacha
+            .bind(to: viewStream.input.rotateGacha)
+            .disposed(by: disposeBag)
 
         segmentControl.rx.selectedSegmentIndex
             .bind(to: viewStream.input.segmentIndex)
             .disposed(by: disposeBag)
 
         viewStream.output.gachaList
-            .bind(to: tableView.rx.items(
-                cellIdentifier: GachasTableViewCell.className,
-                cellType: GachasTableViewCell.self
-            )) { _, gacha, cell in
-                cell.configure(with: gacha)
-            }
+            .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
         viewStream.output.isConnecting
@@ -87,13 +84,28 @@ final class GachaListViewController: UIViewController {
             .disposed(by: disposeBag)
 
         viewStream.output.error
-            .do(onNext: { error in
+            .do { error in
                 HUD.show(.labeledError(title: L10n.connectedError, subtitle: error.localizedDescription))
-            })
+            }
             .delay(.seconds(2), scheduler: MainScheduler.instance)
-            .do(onNext: { _ in
+            .do { _ in
                 HUD.hide()
-            })
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
+
+        viewStream.output.transitionState
+            .do { transitionState in
+                switch transitionState {
+                case .rotate(let gacha):
+                    print("\(gacha.name)を回す")
+                case .showDetail(let gacha):
+                    print("\(gacha.name)の詳細へ")
+
+                default:
+                    print("nothing")
+                }
+            }
             .subscribe()
             .disposed(by: disposeBag)
 

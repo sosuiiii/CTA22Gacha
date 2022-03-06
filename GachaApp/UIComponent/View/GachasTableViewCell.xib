@@ -23,12 +23,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sdu-Ed-JCN">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="126"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-G5-LoQ">
+                                <rect key="frame" x="116.5" y="90" width="67" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="p7l-G5-LoQ" firstAttribute="centerX" secondItem="EZ8-NL-ndA" secondAttribute="centerX" id="7pr-J4-ion"/>
                             <constraint firstItem="sdu-Ed-JCN" firstAttribute="top" secondItem="EZ8-NL-ndA" secondAttribute="top" id="MeW-Gg-2M4"/>
                             <constraint firstAttribute="trailing" secondItem="sdu-Ed-JCN" secondAttribute="trailing" id="Nqa-Ur-3kK"/>
                             <constraint firstItem="sdu-Ed-JCN" firstAttribute="leading" secondItem="EZ8-NL-ndA" secondAttribute="leading" id="SEW-zs-syD"/>
+                            <constraint firstAttribute="bottom" secondItem="p7l-G5-LoQ" secondAttribute="bottom" constant="5" id="geJ-iz-Qi9"/>
                             <constraint firstAttribute="bottom" secondItem="sdu-Ed-JCN" secondAttribute="bottom" id="snD-Qu-VOA"/>
                         </constraints>
                     </view>
@@ -43,6 +52,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="gachaImageView" destination="sdu-Ed-JCN" id="P4P-b9-0cl"/>
+                <outlet property="rotateButton" destination="p7l-G5-LoQ" id="TxL-PD-gLI"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="83.035714285714278"/>
         </tableViewCell>
