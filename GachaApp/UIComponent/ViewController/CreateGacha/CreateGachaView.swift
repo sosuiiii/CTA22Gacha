@@ -83,11 +83,13 @@ final class CreateGachaView: UIView {
                     }).disposed(by: cell.disposeBag)
 
                 cell.textField.rx.text.orEmpty
+                    .distinctUntilChanged()
                     .subscribe(onNext: { text in
                         viewStream.input.textField.onNext((text, indexPath))
                     }).disposed(by: cell.disposeBag)
 
                 cell.textView.rx.text.orEmpty
+                    .distinctUntilChanged()
                     .subscribe(onNext: { text in
                         viewStream.input.textView.onNext((text, indexPath))
                     }).disposed(by: cell.disposeBag)
