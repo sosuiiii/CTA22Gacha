@@ -62,21 +62,35 @@ final class CreateGachaView: UIView {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CreateGachaTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.configureCell(viewStream: viewStream, data: items, indexPath: indexPath)
-                switch indexPath.row % 7 {
+
+                switch indexPath.row % 5 {
                 case 0:
-                    cell.configureType(type: .textField)
+                    cell.configureCell(data: items, type: .textField)
                 case 1:
-                    cell.configureType(type: .textView)
+                    cell.configureCell(data: items, type: .textView)
                 case 2:
-                    cell.configureType(type: .pickerView)
+                    cell.configureCell(data: items, type: .pickerView)
                 case 3:
-                    cell.configureType(type: .textField)
+                    cell.configureCell(data: items, type: .textField)
                 case 4:
-                    cell.configureType(type: .textField)
+                    cell.configureCell(data: items, type: .textField)
                 default:
                     break
                 }
+                cell.pickerView.rx.itemSelected
+                    .subscribe(onNext: { pickerIndexPath in
+                        viewStream.input.pickerView.onNext((pickerIndexPath, indexPath))
+                    }).disposed(by: cell.disposeBag)
+
+                cell.textField.rx.text.orEmpty
+                    .subscribe(onNext: { text in
+                        viewStream.input.textField.onNext((text, indexPath))
+                    }).disposed(by: cell.disposeBag)
+
+                cell.textView.rx.text.orEmpty
+                    .subscribe(onNext: { text in
+                        viewStream.input.textView.onNext((text, indexPath))
+                    }).disposed(by: cell.disposeBag)
 
                 return cell
             })
