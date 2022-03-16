@@ -41,12 +41,9 @@ class CreateGachaTableViewCell: UITableViewCell {
         pickerView.dataSource = self
         pickerView.delegate = self
 
-        textFieldSectionView.isHidden =
-            type == .textField ? false : true
-        textViewSectionView.isHidden =
-            type == .textView ? false : true
-        pickerSectionView.isHidden =
-            type == .pickerView ? false : true
+        textFieldSectionView.isHidden = type != .textField
+        textViewSectionView.isHidden = type != .textView
+        pickerSectionView.isHidden = type != .pickerView
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
